@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anastasia Kostiv</title>
+    <meta charset="utf-8">
+
+    <script>
+	  var count = [[0,0,0],[0,0,0],[0,0,0]];
+
+    liker = function(likes, dislikes){
+	  count[likes][dislikes] = count[likes][dislikes] + 1;
+	  alert(count);
+	  }
+    LikeCounter = function(RatingLike){
+    count[RatingLike] = count[RatingLike] + 1;
+    alert(count);
+   }
+    DislikeCounter = function(RatingDislike){
+    count[RatingDislike] = count[RatingDislike] - 1;
+    alert(count);
+    }
+
+    </script>
+
+  </head>
+  <body>
+
+    <img src="http://www.companywebdesign.ca/wp-content/uploads/2013/09/paragliding-italian-coast-city875.jpg" width="500px" alt="ITALY">
+    <div>
+    <button onclick="liker(0, 0) LikeCounter(2, 0)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"></button>
+	<button onclick="liker(1, 0), DislikeCounter(2, 0)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"></button>
+
+	</div>
+
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTmAFSuKs0bXd20UELKkmorxu6Sezc7no_-10vKQCoRfTkyp2VF" width="500px" alt="ENGLAND">
+    <div>
+    <button onclick="liker(0, 1), LikeCounter(2, 1)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"></button>
+    <button onclick="liker(1, 1), DislikeCounter(2, 0)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"></button>
+    </div>
+
+    <img src="https://thebluebottletree.com/wp-content/uploads/2014/08/faux-sea-glass-4.jpg" width="500px" alt="STONE">
+    <div>
+    <button onclick="liker(0, 2), LikeCounter(2, 2)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"></button>
+    <button onclick="liker(1, 2), DislikeCounter(2, 2)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"></button>
+    </div>
+
+    <style>
+    button {
+
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 20px;
+    background: rgb(238,216,174);
+    box-shadow: 0 -3px rgb(205,186,150) inset;
+    transition: 0.3s;
+    }
+    button:hover { background: rgb(255,211,155); }
+    button:active {
+    background: rgb(255,211,155);
+    box-shadow: 0 3px rgb(238,197,145) inset;
+    }
+    </style>
+  </body>
+</html>
