@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <title>Anastasia Kostiv</title>
     <meta charset="utf-8">
 
     <script>
-	  var count = [[0,0,0],[0,0,0]];
-	  liker = function(likes, dislikes){
-	  count[likes][dislikes] = count[likes][dislikes] + 1;
-	  alert(count);
+	  var count = [[0,0,0],[0,0,0],[0,0,0]];
+
+    liker = function(likes, dislikes){
+	  count[likes][dislikes] = count[likes][dislikes] + 1 ;
+    var l1 = document.getElementById("LikeFirstImg").innerHTML = count[0][0]  ;
+    var d1 = document.getElementById("DislikeFirstImg").innerHTML = count[1][0] ;
+    var l2 = document.getElementById("LikeSecondImg").innerHTML = count[0][1] ;
+    var d2 = document.getElementById("DislikeSecondImg").innerHTML = count[1][1] ;
+    var l3 = document.getElementById("LikeThirdImg").innerHTML = count[0][2] ;
+    var d3 = document.getElementById("DislikeThirdImg").innerHTML = count[1][2] ;
 	  }
+
+    LikeRating = function(plus){
+    count[plus] = count[plus] + 1;
+    var r1 = document.getElementById("rating1").innerHTML = count[2][0]  ;
+    }
     </script>
-	
+
   </head>
   <body>
 
     <img src="http://www.companywebdesign.ca/wp-content/uploads/2013/09/paragliding-italian-coast-city875.jpg" width="500px" alt="ITALY">
     <div>
-    <button onclick="liker(0, 0)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"></button>
-	<button onclick="liker(1, 0)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"></button>
-    
-	</div>
+    <button onclick="liker(0, 0), LikeRating(2, 0)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"><p id = "LikeFirstImg">0<p/></button>
+	  <button onclick="liker(1, 0)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"><p id = "DislikeFirstImg">0<p/></button>
+    <p>Rating:<span id = "rating1">0</span></p>
+	  </div>
 
     <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTmAFSuKs0bXd20UELKkmorxu6Sezc7no_-10vKQCoRfTkyp2VF" width="500px" alt="ENGLAND">
     <div>
-    <button onclick="liker(0, 1)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"></button>
-    <button onclick="liker(1, 1)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"></button>
+    <button onclick="liker(0, 1)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"><p id = "LikeSecondImg">0<p/></button>
+    <button onclick="liker(1, 1)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"><p id = "DislikeSecondImg">0<p/></button>
+    <p>Rating:0</p>
     </div>
 
     <img src="https://thebluebottletree.com/wp-content/uploads/2014/08/faux-sea-glass-4.jpg" width="500px" alt="STONE">
     <div>
-    <button onclick="liker(0, 2)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"></button>
-    <button onclick="liker(1, 2)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"></button>
+    <button onclick="liker(0, 2)"><img src="http://s1.iconbird.com/ico/2013/12/505/w450h4001385925290Like.png" alt="" width="70px" style="vertical-align:middle"><p id = "LikeThirdImg">0<p/></button>
+    <button onclick="liker(1, 2)"><img src="http://webtort.ru/graphics/icons/icons/raznoe/raznoe41/dislike_dizlajk.png" alt="" width="62px" style="vertical-align:middle"><p id = "DislikeThirdImg">0<p/></button>
+    <p>Rating:0</p>
     </div>
 
     <style>
@@ -47,6 +61,12 @@
     button:active {
     background: rgb(255,211,155);
     box-shadow: 0 3px rgb(238,197,145) inset;
+    }
+
+    p{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 19px;
+      color: #A52A2A;
     }
     </style>
   </body>
